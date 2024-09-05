@@ -82,6 +82,38 @@
         }
         input[type="submit"] {
             width: auto;
+
+            /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            main {
+                padding: 1rem;
+                margin: 1rem;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            main {
+                padding: 1.5rem;
+                margin: 1.5rem auto;
+            }
+        }
+
+        @media screen and (min-width: 1025px) {
+            main {
+                padding: 2rem;
+                margin: 2rem auto;
+            }
+        }
+        * Responsive styles for the form */
+    @media screen and (max-width: 600px) {
+        input, textarea {
+            font-size: 16px; /* Prevents zoom on input focus on mobile devices */
         }
     </style>
 </head>
