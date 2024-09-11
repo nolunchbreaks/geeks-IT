@@ -1,144 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geeks I.T. - Your Trusted MSP</title>
     <style>
-        body {
-            font-family: 'Open Sans MS', cursive;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #6dd5ed, #2193b0);
-            min-height: 100vh;
+      body {
+        font-family: "Open Sans MS", cursive;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #6dd5ed, #2193b0);
+        min-height: 100vh;
+      }
+
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000,
+            0 0 20px #ff0000, 0 0 25px #ff0000, 0 0 30px #ff0000,
+            0 0 35px #ff0000;
         }
-        header {
-            background-color: navy;
-            color: white;
-            padding: 1rem;
-            text-align: center;
+        50% {
+          text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00,
+            0 0 20px #00ff00, 0 0 25px #00ff00, 0 0 30px #00ff00,
+            0 0 35px #00ff00;
         }
-        nav {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 0.5rem;
+        100% {
+          text-shadow: 0 0 5px #0000ff, 0 0 10px #0000ff, 0 0 15px #0000ff,
+            0 0 20px #0000ff, 0 0 25px #0000ff, 0 0 30px #0000ff,
+            0 0 35px #0000ff;
         }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 1rem;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: navy;
-            font-weight: bold;
-        }
+      }
+      header {
+        background-color: navy;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+        animation: glow 1.5s ease-in-out infinite;
+      }
+      nav {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 0.5rem;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        margin: 0 1rem;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: navy;
+        font-weight: bold;
+      }
+      main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+      }
+      .logo {
+        float: left;
+        margin-right: 1rem;
+        max-width: 100px;
+      }
+      .cta-button {
+        display: inline-block;
+        background-color: navy;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+        transition: background-color 0.3s ease;
+      }
+      .cta-button:hover {
+        background-color: #0000cc;
+      }
+      footer {
+        background-color: navy;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Responsive styles */
+      @media screen and (max-width: 600px) {
         main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            border-radius: 10px;
+          padding: 1rem;
+          margin: 1rem;
         }
-        .logo {
-            float: left;
-            margin-right: 1rem;
-            max-width: 100px;
+        h1 {
+          font-size: 1.5rem;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: navy;
-            color: white;
-            padding: 0.5rem 1rem;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
+        h2 {
+          font-size: 1.2rem;
         }
-        .cta-button:hover {
-            background-color: #0000cc;
-        }
-        footer {
-            background-color: navy;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+      }
 
-            /* Responsive styles */
-        @media screen and (max-width: 600px) {
-            main {
-                padding: 1rem;
-                margin: 1rem;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
-            h2 {
-                font-size: 1.2rem;
-            }
+      @media screen and (min-width: 601px) and (max-width: 1024px) {
+        main {
+          padding: 1.5rem;
+          margin: 1.5rem auto;
         }
+      }
 
-        @media screen and (min-width: 601px) and (max-width: 1024px) {
-            main {
-                padding: 1.5rem;
-                margin: 1.5rem auto;
-            }
+      @media screen and (min-width: 1025px) {
+        main {
+          padding: 2rem;
+          margin: 2rem auto;
         }
-
-        @media screen and (min-width: 1025px) {
-            main {
-                padding: 2rem;
-                margin: 2rem auto;
-            }
-        }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Geeks I.T.</h1>
-        
-         <p>Your Trusted Managed Service Provider</p>
+      <h1>Geeks I.T.</h1>
+      <p>Your Trusted Managed Service Provider</p>
     </header>
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-        </ul>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="booking.html">Book Now</a></li>
+      </ul>
     </nav>
     <main>
-        <img src="geeks it logo (1).png" alt="geeks it logo (1).png" class="logo">
-        <h2>Welcome to Geeks I.T.</h2>
-        <p>
-            Welcome to The Geeks I.T., your trusted partner for world-class IT services and solutions tailored to your unique needs. We provide cutting-edge Managed Service Provider (MSP) support that keeps your business running smoothly, whether you're an oil company in Africa, a small business in Canada or the US, or a nonprofit organization or church dedicated to a higher purpose.
-
-At The Geeks I.T., we believe technology should be your greatest asset, not a headache. Our team of expert IT professionals delivers fast, reliable, and scalable solutions that empower your organization to thrive in today’s digital landscape. With a commitment to excellence, we specialize in:
-
-- Comprehensive IT Infrastructure Support: Ensuring your systems are always up and running with the latest security, hardware, and software solutions.
-- Cybersecurity & Data Protection: Safeguarding your data and operations with advanced security measures to defend against ever-evolving cyber threats.
-- Cloud Solutions & Virtualization: Optimizing your business with flexible, scalable cloud services that grow with you.
-- Tailored Solutions for Churches and Nonprofits: We understand the unique needs of faith-based and nonprofit organizations, providing budget-friendly IT solutions that help you focus on your mission.
-
-Whether you're managing complex operations in the oil sector or driving growth in a small businesses The Geeks I.T. is here to support you every step of the way, ensuring your technology works for you, not against you.
-
-Let's geek out over your IT challenges – so you can focus on what matters most. The Geeks I.T. – where tech meets trust.
-        </p>
-        <h3>About the Founder</h3>
-        <p>Osagie Anolu, our visionary founder, established Geeks I.T. with a mission to revolutionize IT support for businesses. With years of experience in the tech industry, Osagie recognized the need for a more personalized and efficient approach to IT services.</p>
-        <p>Inspired by the success of Nerds on Site, Osagie built Geeks I.T. on the principles of exceptional customer service, rapid response times, and comprehensive IT solutions tailored to each client's unique needs.</p>
-        <a href="services.html" class="cta-button">Explore Our Services</a>
+      <img
+        src="geeks it logo (1).png"
+        alt="geeks it logo (1).png"
+        class="logo"
+      />
+      <h2>Welcome to Geeks I.T.</h2>
+      <p>
+        Welcome to The Geeks I.T., your trusted partner for world-class IT
+        services and solutions tailored to your unique needs. We provide
+        cutting-edge Managed Service Provider (MSP) support that keeps your
+        business running smoothly, whether you're an oil company in Africa, a
+        small business in Canada or the US, or a nonprofit organization or
+        church dedicated to a higher purpose. At The Geeks I.T., we believe
+        technology should be your greatest asset, not a headache. Our team of
+        expert IT professionals delivers fast, reliable, and scalable solutions
+        that empower your organization to thrive in today’s digital landscape.
+        With a commitment to excellence, we specialize in: - Comprehensive IT
+        Infrastructure Support: Ensuring your systems are always up and running
+        with the latest security, hardware, and software solutions. -
+        Cybersecurity & Data Protection: Safeguarding your data and operations
+        with advanced security measures to defend against ever-evolving cyber
+        threats. - Cloud Solutions & Virtualization: Optimizing your business
+        with flexible, scalable cloud services that grow with you. - Tailored
+        Solutions for Churches and Nonprofits: We understand the unique needs of
+        faith-based and nonprofit organizations, providing budget-friendly IT
+        solutions that help you focus on your mission. Whether you're managing
+        complex operations in the oil sector or driving growth in a small
+        business, The Geeks I.T. is here to support you every step of the way,
+        ensuring your technology works for you, not against you. Let's geek out
+        over your IT challenges – so you can focus on what matters most. The
+        Geeks I.T. – where tech meets trust.
+      </p>
+      <h3>About the Founder</h3>
+      <p>
+        Osagie Anolu, our visionary founder, established Geeks I.T. with a
+        mission to revolutionize IT support for businesses. With years of
+        experience in the tech industry, Osagie recognized the need for a more
+        personalized and efficient approach to IT services.
+      </p>
+      <p>
+        Inspired by the success of Nerds on Site, Osagie built Geeks I.T. on the
+        principles of exceptional customer service, rapid response times, and
+        comprehensive IT solutions tailored to each client's unique needs.
+      </p>
+      <a href="services.html" class="cta-button">Explore Our Services</a>
     </main>
-    <footer>
-        &copy; 2024 Geeks I.T. All rights reserved.
-    </footer>
-</body>
-</html> 
+    <footer>&copy; 2024 Geeks I.T. All rights reserved.</footer>
+  </body>
+</html>
